@@ -1,0 +1,231 @@
+/* RWD: 一般電腦畫面 */
+
+/* body頁面左右不留白 */
+body{
+    padding: 0;
+    margin: 0;
+    /* 使用REM */
+    /* font-size: 62.5%; */
+}
+
+/* 隱藏起來的漢堡圖式 */
+.berger{
+    position: fixed;
+    top:10px;
+    right:15px;
+    padding: 0px;
+    width: 30px;
+    height: 27px;
+    display: flex; /*宣告為彈性佈局元素*/
+    justify-content: space-between; /*相同間距*/
+    flex-direction: column;
+    /* 隱藏 */
+    display: none;
+}
+.berger div{
+    /* 漢堡內小長條 */
+    padding: 0px;
+    width:30px;
+    height:5px;
+    /* margin-bottom: 4px; */
+    background:rgb(180, 180, 180);
+    transition: all 5s;
+    
+}
+
+/* 導覽列 */
+nav {
+    background-color: rgb(255, 255, 255,0.8);
+    display: block;
+    height: 50px;
+    width: 100%;
+    text-align-last: justify;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px 20px 15px -15px rgb(70, 70, 70, 0.7);
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+}
+
+.menu{
+    padding: 10px 20%;
+}
+
+.menu a{
+    display: inline-block;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: rgb(58, 58, 58);
+    text-decoration: none;
+
+}
+
+/* 頁首 */
+header{
+    margin: 0 auto;
+    text-align-last: center;
+    
+}
+
+h1{
+    position: absolute;
+    top:300px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 5px;
+    font-weight: 600;
+}
+
+.banner_img{
+    width: 860px;
+}    
+
+/* 介面標題 */
+main{
+    width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2{
+    color:rgb(58, 58, 58);
+}
+
+.clickable:hover{
+    cursor: pointer;
+    color: rgb(135, 96, 61);
+}
+
+/* 一般文字 */
+p{
+    font-size: 16px;
+    letter-spacing: 1px;
+    word-wrap:break-word;
+    text-align: justify;
+    text-justify:inter-ideograph;
+}
+
+/* 特殊文字 */
+.p_green{
+    color:rgb(102, 195, 128);
+    font-weight: 900;
+}
+
+.inline{
+    display: inline-block;
+}
+
+    
+
+/* footer */
+footer{
+    width: 100%;
+    height: 150px;
+    position: relative;
+    bottom: 0;
+    background:rgb(58, 58, 58);
+
+}
+
+.info{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    z-index: 3;
+    /* background:rgb(102, 195, 128); */
+
+}
+
+.info p{
+    text-align: center;
+    color:rgb(78, 78, 78);
+    line-height: 10px;
+    
+}
+
+.white{
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(250, 250, 250, 0.7), rgba(250, 250, 250, 0.2));
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+} 
+.footer-pic{
+    width: 100%;
+    height: 150px;
+    background: rgb(169, 219, 132);
+    overflow: hidden;
+    text-align: center;
+    
+}
+.footer-pic img{
+    width: 100%;
+    margin-top: -59%;  
+}
+
+
+
+
+/* RWD：介面縮放 */
+@media(max-width:860px){
+    /* 物件撐開 */
+    .banner_img{
+        width: 100%;
+    }
+    h1{
+        top: 150px;
+        font-size: 25px;
+    }
+
+    main{
+        width: 100%;
+    }
+}
+
+@media(max-width:700px){
+    /* 出現漢堡選單 */
+    .berger{
+        display: flex;
+    }
+    .menu{
+        /* 要蓋過之前的設定 */
+        padding:0 0 0 0;
+        height: 100%;
+        width: 0px;
+        position: fixed;
+        
+        /* 50px是nav的固定高度 */
+        top: 50px;
+        background: rgb(83, 106, 129);
+        text-align: center;
+        text-align-last: center;
+        /* 先把側欄隱藏起來 */
+        right: -200px;
+        /* 漸變動畫 */
+        transition: all 0.7s;
+        
+        
+    }
+    .menu a{
+        display: block;
+        color: white;
+        line-height: 70px;
+    }
+
+    .menu a:hover{
+        color:rgb(198, 232, 227);
+    }
+    /* jQuery鼠標點擊berger，幫nav標籤添加menu-show屬性 */
+    .menu-show .menu{
+        width: 200px;
+        right: 0px;
+        z-index: 3;
+    }
+}
+

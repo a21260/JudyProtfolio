@@ -1,0 +1,219 @@
+/* 彈出視窗 */
+
+/* 設定 */
+.hide section{
+    width: 1100px;
+    height: 543.864px;
+    position: fixed;
+    z-index: 5;
+    top: 50%;
+    bottom: -50%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 255, 255);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 20px 20px 15px -15px rgb(70, 70, 70, 0.7);
+    display: none;
+}
+
+.hide .black{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    background: rgb(0, 0, 0, 0.6);
+    display: none;
+}
+
+/* 按鈕：叉叉、向前、向後 */
+.hide .fork{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-image: url("./button/fork-1.svg");
+    background-size: cover;
+    z-index: 3;
+}
+
+.hide .fork:hover{
+    background-image: url("./button/fork-2.svg");
+}
+
+.pre{
+    position: absolute;
+    top: 45%;
+    left: calc(40px - 1% - 20px);/* 畫布距離邊邊40px 箭頭距離畫布1%，箭頭寬度20px */
+    width: 20px;
+    height: 20px;
+    background-image: url("./button/page_up-1.svg");
+    background-size: cover;
+}
+
+.pre:hover{
+    background-image: url("./button/page_up-2.svg");
+}
+
+.no_pre .pre{
+    display: none;
+}
+
+.nex{
+    position: absolute;
+    top: 45%;
+    left: calc(65% + 40px  + 1%);
+    width: 20px;
+    height: 20px;
+    background-image: url("./button/page_down-1.svg");
+    background-size: cover;
+}
+
+.nex:hover{
+    background-image: url("./button/page_down-2.svg");
+}
+
+.no_nex .nex{
+    display: none;
+}
+
+.intro_fold{
+    position: absolute;
+    top: 60px;
+    right: 17.5px;
+    width: 25px;
+    height: 25px;
+    background-image: url("./button/intro_fold-1.svg");
+    background-size: cover;
+    z-index: 3;
+    display: none;
+}
+
+.intro_fold:hover{
+    background-image: url("./button/intro_fold-2.svg");
+}
+
+/* 顯示：加上jump屬性*/
+.jump section{
+    display: block;
+} 
+
+.jump .black{
+    display: block;
+} 
+
+/* big */
+/* 隱藏設定 */
+.none{
+    display:none;
+}
+
+/* 100%寬高 */
+.big{
+    width: 100%;
+    height: 100%;
+}
+
+/* 指#big1、#big2...... */
+.big{
+    width: 100%;
+    height: 100%;
+}
+
+/* big中的畫布部分 */
+.pic_space{
+   width: 65%; 
+   height: 100%;
+   background: rgb(243, 243, 243);
+   overflow: hidden;
+   margin-left: 40px ;
+   margin-right: 40px ;
+}
+
+.list{
+    width: calc( 100% * 5);
+    height: 100%;
+    margin: 0;
+}
+
+/* 畫布內的圖框box */
+.box{
+    width: calc( 100% / 5);
+    height: 100%;
+    /* background: rgb(134, 168, 112); */
+    float:left;
+    /* 內容物水平置中+垂直置中 */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* big中圖片設定*/
+.big img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 文字介紹 */
+.intro{
+    width: calc(35% - 80px - 70px);
+    text-align: left;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.intro p{
+    font-size: 12px;
+    color:rgb(94, 94, 94);
+}
+
+
+
+@media(max-width:1100px){
+    .hide section{
+        width: 100%;
+    }
+}
+
+@media(max-width:700px){
+    .intro_fold{
+        display: block;
+    }
+
+    .intro{
+        /* 要蓋過之前的設定 */
+        width: 160px;
+        height: calc(100% - 40px);
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(0);
+        background: rgb(255, 255, 255, 0.65);
+        /* offset-x | offset-y | blur-radius | spread-radius | color */
+        box-shadow: -5px 0px 20px 0px rgb(70, 70, 70, 0.7);
+        z-index: 2;
+        padding: 20px;
+        /* 先把側欄隱藏起來 */
+        display:none;
+    }
+
+    .intro div{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .intro_fold-show .intro{
+        display: block;
+    }
+
+    .intro_fold-show .nex{
+        display: none;
+    }
+
+}

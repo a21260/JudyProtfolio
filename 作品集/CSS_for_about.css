@@ -1,0 +1,39 @@
+/* for all區塊 */
+section{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: left;
+    display: block;
+
+}
+
+/* 經驗區塊（不要float） */
+.experince{
+    clear: both; /* 移除float */
+}
+
+/* 看起來沒啥差別，但視窗縮小的時候，內容不會貼住邊邊 */
+main{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/* 照片尺寸及裁切 */
+.my_photo{
+    background:green;
+    width: 200px;
+    height: 200px;
+    overflow: hidden; /* 隱藏多餘圖片 */
+    float: left;
+    margin-right: 30px;
+}
+.my_photo img{
+    width: 170%;
+    margin-top: -90%;
+    margin-left: -10%;
+}
+
+
+
+
+

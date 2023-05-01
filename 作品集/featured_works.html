@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<html>
+    <!-- 網站資訊 -->
+    <head>
+        <meta charset="UTF-8"/>
+        <title>秀羽的作品集</title>
+        <link rel="stylesheet" href="./CSS_for_all.css"/>
+        <link rel="stylesheet" href="CSS_for_featrued_works.css"/>
+        <link rel="stylesheet" href="CSS_for_big.css"/>
+        <script src="./JS_for_all.js"></script>
+        
+     </head>
+     <!-- 網站所有可見內容 -->
+     <body>
+        <!-- 導覽列 -->
+        <nav id="nav">
+            <!-- 側邊的berger圖示 -->
+            <div class="berger clickable" onclick="berger();">
+                <div class="a"></div><div class="b"></div><div class="c"></div>
+            </div>
+            <!-- 可橫條可側欄的導覽列 -->
+            <div class="menu">
+                <a href="about.html" class="clickable">關於秀羽</a>
+                <a href="featured_works.html" class="clickable">精選作品</a>
+                <a href="./all_works.html" class="clickable">所有作品</a>
+            </div>
+        </nav>
+        <!-- 頁首 -->
+        <header>
+            <h1>\ 歡迎光臨！秀羽的作品集 /</h1>
+            <div>
+                <img class="banner_img" src="./頁首圖.png"/>
+            </div>
+        </header>
+
+        <main>
+            <!-- 介面標題 -->
+            <hr>
+            <h2>精選作品</h2>
+            <hr>
+            <!-- 內文 -->
+            <article class="visable">
+                <section>
+                    <img id="pic1" class="work clickable"  onclick="detail('big1');" src="./works/作品1.png"/>
+                    <p class="p_green inline">▲</p>
+                    <p class="inline">甜點女孩：➊布丁 ➋甜甜圈 ❸拿破崙派</p>
+                </section>
+                <section>
+                    <img id="pic2" class="work clickable"  onclick="detail('big2');" src="./works/作品2.png"/>
+                    <p class="p_green inline">▲</p>
+                    <p class="inline">山上の動物們（師大山社週貼紙）</p>
+                </section>
+                <section>
+                    <img id="pic3" class="work clickable"  onclick="detail('big3');" src="./works/作品3-1.png"/>
+                    <p class="p_green inline">▲</p>
+                    <p class="inline">肯納基金會中秋賀卡</p>
+                </section>
+                <section>
+                    <img id="pic4" class="work clickable"  onclick="detail('big4');" src="./works/作品4-1.png"/>
+                    <p class="p_green inline">▲</p>
+                    <p class="inline">The GREAT HUNGER 海報</p>
+                </section>
+            </article>
+
+        </main>
+         <!-- 彈出視窗區 -->
+         <!-- 會這樣寫是因為ID的CSS權重太高了，無法覆蓋屬性，所以ID給JS用，class給CSS用 -->
+         <article id="hide" class="hide">
+            <div class="black"></div>
+            <section>
+                <div id="fork" class="fork clickable" onclick="close_detail();">
+                </div>
+
+                <div id="pre" class="pre clickable" onclick="pre();">
+                </div>
+
+                <div id="intro_fold" class="intro_fold clickable" onclick="intro_fold();">
+                </div>
+
+                    <div id="big1" class="big none">
+                        <div class="pic_space">
+                            <div class="list">
+                                <div class="box"><img src="./works/作品1-1.png"/></div>
+                                <div class="box"><img src="./works/作品1-2.png"/></div>
+                                <div class="box final"><img src="./works/作品1-3.png"/></div>
+                            </div>
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>作品名稱｜甜點女孩</p>
+                                <p>創作時間｜2021年9月</p>
+                                <p>創作工具｜Adobe Illustrator</p>
+                                <br/>
+                                <p>➊ 香甜滑嫩的布丁</p>
+                                <p>➋ 淋上草莓糖霜的甜甜圈</p>
+                                <p>➌ 酥脆的拿破崙派</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="big2" class="big none">
+                        <div class="pic_space">
+                            <div class="list">
+                                <div class="box final"><img src="./works/作品2.png"/></div>
+                            </div>
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>作品名稱｜山上の動物們</p>
+                                <p>創作時間｜2020年11月</p>
+                                <p>創作工具｜Easy Paint Tool SAI</p>
+                                <br/>
+                                <p>這是2020年師大山社週的貼紙，用各種小動物們讓大家更認識山林生態，也可以貼在物品上讓小動物陪伴自己哦！</p>
+                            </div>    
+                        </div>
+                    </div>
+
+                    <div id="big3" class="big none">
+                        <div class="pic_space">
+                            <div class="list">
+                                <div class="box"><img src="./works/作品3-1.png"/></div>
+                                <div class="box"><img src="./works/作品3-2.png"/></div>
+                                <div class="box final"><img src="./works/作品3-3.png"/></div>
+                            </div>
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>作品名稱｜肯納基金會中秋賀卡</p>
+                                <p>創作時間｜2022年10月</p>
+                                <p>創作工具｜Adobe Photoshop</p>
+                                <br/>
+                                <p>大學課程「印刷設計」的作品，希望以童趣的插畫傳遞溫暖的祝福及肯納基金會的理念。</p>
+                            </div>    
+                        </div>
+                    </div>
+
+                    <div id="big4" class="big none">
+                        <div class="pic_space">
+                            <div class="list">
+                                <div class="box"><img src="./works/作品4-1.png"/></div>
+                                <div class="box"><img src="./works/作品4-2.png"/></div>
+                                <div class="box"><img src="./works/作品4-3.png"/></div>
+                                <div class="box"><img src="./works/作品4-4.png"/></div>
+                                <div class="box final"><img src="./works/作品4-5.png"/></div>
+                            </div>
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>作品名稱｜The GREAT HUNGER 海報</p>
+                                <p>創作時間｜2022年-2023年</p>
+                                <p>創作工具｜Adobe Photoshop</p>
+                                <br/>
+                                <p></p>
+                            </div>    
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div id="nex" class="nex clickable" onclick="nex();">
+                </div>
+            </section>
+        </article>
+        <footer>
+            <div class="info">
+                <p>王秀羽</p>
+                <p>E-MAIL: a21260a21260a21260@gmail.com</p>
+                <p>PHONE: 0966-707-185</p>
+            </div>
+            <div class="white"></div>
+            <div class="footer-pic">
+                <img src="./頁尾.png"/>
+            </div>
+            
+        </footer>
+     </body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
