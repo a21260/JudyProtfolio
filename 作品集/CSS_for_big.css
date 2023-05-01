@@ -46,12 +46,14 @@
 
 .pre{
     position: absolute;
-    top: 45%;
+    top: 50%;
+    transform: translateY(-50%);
     left: calc(40px - 1% - 20px);/* 畫布距離邊邊40px 箭頭距離畫布1%，箭頭寬度20px */
     width: 20px;
     height: 20px;
     background-image: url("./button/page_up-1.svg");
     background-size: cover;
+    z-index: 4;
 }
 
 .pre:hover{
@@ -64,12 +66,14 @@
 
 .nex{
     position: absolute;
-    top: 45%;
+    top: 50%;
+    transform: translateY(-50%);
     left: calc(65% + 40px  + 1%);
     width: 20px;
     height: 20px;
     background-image: url("./button/page_down-1.svg");
     background-size: cover;
+    z-index: 4;
 }
 
 .nex:hover{
@@ -170,6 +174,7 @@
 
 .intro p{
     font-size: 12px;
+    line-height: 24px;
     color:rgb(94, 94, 94);
 }
 
@@ -216,4 +221,58 @@
         display: none;
     }
 
+}
+
+/* 手機尺寸 */
+@media(max-width:500px){
+
+    .pic_space{
+        width: 100%;
+        margin: 0;
+    }
+
+    .pre{
+        left: 10px;
+    }
+
+    .nex{
+        left: calc(100% - 10px - 20px);
+    }
+    .intro{
+        background: rgb(255, 255, 255, 0.85);
+    }
+
+    .jump section::before{
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius:999em;
+        background: rgb(255, 255, 255,0.7);
+        z-index: 3;
+    }
+
+    .no_pre section::before{
+        display: none;
+    }
+
+    .jump section::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius:999em;
+        background: rgb(255, 255, 255,0.7);
+        z-index: 3;
+    }
+
+    .no_nex section::after{
+        display: none;
+    }
 }

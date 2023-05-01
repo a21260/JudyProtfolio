@@ -1,0 +1,29 @@
+/* for all visable seciton */
+.visable section{
+    padding-top: 30px;
+    padding-bottom: 40px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* for 一般圖片section的設定 */
+.work{
+    display: block;
+    width:100%;
+    margin: 0 auto;
+}
+
+/* 客制圖片 */
+#pic2{
+    width:60%;
+}
+
+#pic3{
+    width:70%;
+}
+
+#pic4{
+    width:80%;
+}
+
