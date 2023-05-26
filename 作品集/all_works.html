@@ -42,8 +42,149 @@
             <h2>所有作品</h2>
             <hr>
             <!-- 內文 -->
+            <article class="visable">
+                <p class="p_center">💡點縮圖就可以看到完整圖片以及詳細介紹哦！</p>
+                <p class="p_center p_green inline">｜插畫作品｜</p>
+                <div class="row">
+                    <section>
+                        <div class="clickable"  onclick="detail('big1');">
+                            <img id="pic1" class="work" src="./works/方塊1.png"/>
+                        </div>
+                        <p>甜點女孩</p>
+                    </section>
+                    <section>
+                        <div class="clickable"  onclick="detail('big2');">
+                            <img id="pic2" class="work" src="./works/方塊2.png"/>
+                        </div>
+                        <p>山上の動物們</p>
+                    </section>
+                    <section>
+                        <div class="clickable"  onclick="detail('big3');">
+                            <img id="pic3" class="work" src="./works/方塊3.png"/>
+                        </div>
+                            <p>好多好多貓</p>
+                    </section>
+                </div>
+                <div class="row">
+                    <section>
+                        <div class="clickable"  onclick="detail('big4');">
+                            <img id="pic4" class="work" src="./works/方塊4.png"/>
+                        </div>
+                        <p>爬爬熱狗捲</p>
+                    </section>
+                </div>
+                <p class="p_center p_green inline">｜印刷品｜</p>
+                <div class="row">
+                    <section>
+                        <div class="clickable"  onclick="detail('big5');">
+                            <img id="pic5" class="work" src="./works/方塊4.png"/>
+                        </div>
+                        <p>爬爬熱狗捲</p>
+                    </section>
+                </div>
+
+                <!-- <p class="p_center p_green inline">｜其他｜</p> -->
+            </article>
             
         </main>
+
+        <!-- 彈出視窗區 -->
+        <!-- 會這樣寫是因為ID的CSS權重太高了，無法覆蓋屬性，所以ID給JS用，class給CSS用 -->
+         <article id="hide" class="hide">
+            <div class="black"></div>
+            <section>
+                <div id="fork" class="fork clickable" onclick="close_detail();">
+                </div>
+
+                <div id="pre" class="pre clickable" onclick="pre();">
+                </div>
+
+                <div id="intro_fold" class="intro_fold clickable" onclick="intro_fold();">
+                </div>
+
+                    <div id="big1" class="big none">
+                        <div class="pic_space">
+                            <div class="list">
+                                <div class="box" loading="lazy"><img src="./works/作品1-1.png"/></div>
+                                <div class="box" loading="lazy"><img src="./works/作品1-2.png"/></div>
+                                <div class="box final" loading="lazy"><img src="./works/作品1-3.png"/></div>
+                            </div>
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>作品名稱｜甜點女孩</p>
+                                <p>創作時間｜2021年9月</p>
+                                <p>創作工具｜Adobe Illustrator</p>
+                                <br/>
+                                <p>➊ 香甜滑嫩的布丁</p>
+                                <p>➋ 淋上草莓糖霜的甜甜圈</p>
+                                <p>➌ 酥脆的拿破崙派</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="big2" class="big none">
+                        <div class="pic_space">
+                            <div class="list">
+                                <div class="box final" loading="lazy"><img src="./works/作品2.png"/></div>
+                            </div>
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>作品名稱｜山上の動物們</p>
+                                <p>創作時間｜2020年11月</p>
+                                <p>創作工具｜Easy Paint Tool SAI</p>
+                                <br/>
+                                <p>這是2020年師大山社週的貼紙，用各種小動物們讓大家更認識山林生態，也可以貼在物品上讓小動物陪伴自己哦！</p>
+                            </div>    
+                        </div>
+                    </div>
+
+                    <div id="big3" class="big none">
+                        <div class="pic_space">
+                            <div class="list">
+                                <div class="box" loading="lazy"><img src="./works/方塊3-1.jpg"/></div>
+                                <div class="box final" loading="lazy"><img src="./works/方塊3-2.jpg"/></div>
+                            </div>
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>作品名稱｜好多好多貓</p>
+                                <p>創作時間｜2022年9月</p>
+                                <p>創作工具｜Adobe Photoshop</p>
+                                <br/>
+                                <p>貓咪的各種姿態，組成一幅畫！</p>
+                            </div>    
+                        </div>
+                    </div>
+
+                    <div id="big4" class="big none">
+                        <div class="pic_space">
+                            <div class="list">
+                                <div class="box" loading="lazy"><img src="./works/方塊4-1.png"/></div>
+                                <div class="box" loading="lazy"><img src="./works/方塊4-2.png"/></div>
+                                <div class="box" loading="lazy"><img src="./works/方塊4-3.png"/></div>
+                                <div class="box final" loading="lazy"><img src="./works/方塊4-4.png"/></div>
+                            </div>
+                        </div>
+                        <div class="intro">
+                            <div>
+                                <p>作品名稱｜爬爬熱狗捲</p>
+                                <p>創作時間｜2022年</p>
+                                <p>創作工具｜Adobe Photoshop</p>
+                                <br/>
+                                <p>這個橙色、鬆軟的小生物的原型是熱狗捲。熱狗捲的手腳都短短的，所以行動也廢廢的。這系列的插圖記錄著他的四處探險。</p>
+                            </div>    
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div id="nex" class="nex clickable" onclick="nex();">
+                </div>
+            </section>
+        </article>
+
         <footer>
             <div class="info">
                 <p>王秀羽</p>

@@ -43,7 +43,9 @@ function detail(big){
 function close_detail(){
   document.getElementById(passBig).classList.toggle("none");
   document.getElementById("hide").classList.toggle("jump");
+  passBig=0;
 }
+
 
 // 滑圖按鈕控制
 function nex(){ 
@@ -59,18 +61,41 @@ function nex(){
 }
 
 function pre(){
-//翻頁
-page--;
-var list = $("#" + passBig + " .list");
-var margin = "-" + (page) + "00%";
-console.log(margin);
-list.animate({'margin-left':margin},500);
+  //翻頁
+  page--;
+  var list = $("#" + passBig + " .list");
+  var margin = "-" + (page) + "00%";
+  console.log(margin);
+  list.animate({'margin-left':margin},500);
 
-if_pre();
-if_nex();
+  if_pre();
+  if_nex();
 }
 
-//摺疊介紹
+
+// 鍵盤控制
+document.addEventListener("keydown", function(event) {
+  if(event.code == "Escape") {
+    if(passBig != 0){
+      close_detail();
+    }   
+  }
+  // console.log(event.code);
+  if(event.code == "ArrowRight"){
+    console.log(document.getElementById("hide").classList.contains("no_nex"));
+    if(passBig != 0 && document.getElementById("hide").classList.contains("no_nex") == false){
+      nex();
+  }
+  }
+  if(event.code == "ArrowLeft"){
+    console.log(document.getElementById("hide").classList.contains("no_pre"));
+    if(passBig != 0 && document.getElementById("hide").classList.contains("no_pre") == false){
+      pre();
+  }
+  } 
+});
+
+//摺疊介紹（視窗縮小時使用）
 function intro_fold(){
   document.getElementById("hide").classList.toggle("intro_fold-show");
 }

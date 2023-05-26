@@ -15,15 +15,23 @@
 }
 
 /* 客制圖片 */
-#pic2{
+.six{
     width:60%;
 }
 
-#pic3{
+.seven{
     width:70%;
 }
 
-#pic4{
+.eight{
     width:80%;
+}
+
+/* 手機尺寸 */
+@media(max-width:500px){
+    /* 客製圖片改滿版 */
+    .work{
+        width: 90%;
+    }
 }
 

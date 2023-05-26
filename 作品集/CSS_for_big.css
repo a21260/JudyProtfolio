@@ -1,9 +1,13 @@
 /* 彈出視窗 */
 
-/* 設定 */
+
+/* ===================================== */
+/* 基本畫面設定 */
 .hide section{
-    width: 1100px;
-    height: 543.864px;
+    width: 90%;
+    height: 90%;
+    /* width: 1100px;
+    height: 543.864px; */
     position: fixed;
     z-index: 5;
     top: 50%;
@@ -28,6 +32,16 @@
     display: none;
 }
 
+/* 顯示：加上jump屬性*/
+.jump section{
+    display: block;
+} 
+
+.jump .black{
+    display: block;
+}
+
+/* ===================================== */
 /* 按鈕：叉叉、向前、向後 */
 .hide .fork{
     position: absolute;
@@ -39,11 +53,6 @@
     background-size: cover;
     z-index: 3;
 }
-
-.hide .fork:hover{
-    background-image: url("./button/fork-2.svg");
-}
-
 .pre{
     position: absolute;
     top: 50%;
@@ -55,11 +64,6 @@
     background-size: cover;
     z-index: 4;
 }
-
-.pre:hover{
-    background-image: url("./button/page_up-2.svg");
-}
-
 .no_pre .pre{
     display: none;
 }
@@ -75,11 +79,6 @@
     background-size: cover;
     z-index: 4;
 }
-
-.nex:hover{
-    background-image: url("./button/page_down-2.svg");
-}
-
 .no_nex .nex{
     display: none;
 }
@@ -96,19 +95,40 @@
     display: none;
 }
 
-.intro_fold:hover{
-    background-image: url("./button/intro_fold-2.svg");
+
+@media (any-hover: hover){
+    .hide .fork:hover{
+        background-image: url("./button/fork-2.svg");
+    }
+    .pre:hover{
+        background-image: url("./button/page_up-2.svg");
+    }
+    .nex:hover{
+        background-image: url("./button/page_down-2.svg");
+    }
+    .intro_fold:hover{
+        background-image: url("./button/intro_fold-2.svg");
+    }
+
 }
 
-/* 顯示：加上jump屬性*/
-.jump section{
-    display: block;
-} 
+@media (any-hover: none){
+    .hide .fork:active{
+        background-image: url("./button/fork-2.svg");
+    }
+    .pre:active{
+        background-image: url("./button/page_up-2.svg");
+    }
+    .nex:active{
+        background-image: url("./button/page_down-2.svg");
+    }
+    .intro_fold:active{
+        background-image: url("./button/intro_fold-2.svg");
+    }
 
-.jump .black{
-    display: block;
-} 
+}
 
+/* ===================================== */
 /* big */
 /* 隱藏設定 */
 .none{
@@ -116,12 +136,6 @@
 }
 
 /* 100%寬高 */
-.big{
-    width: 100%;
-    height: 100%;
-}
-
-/* 指#big1、#big2...... */
 .big{
     width: 100%;
     height: 100%;
@@ -179,7 +193,7 @@
 }
 
 
-
+/* ============================================ */
 @media(max-width:1100px){
     .hide section{
         width: 100%;
@@ -223,12 +237,24 @@
 
 }
 
+/* ============================================ */
 /* 手機尺寸 */
 @media(max-width:500px){
-
+    .hide section{
+        height: 543.864px;
+    }
     .pic_space{
         width: 100%;
         margin: 0;
+    }
+
+    .hide .fork{
+        top: -30px;
+        }
+    
+    .intro_fold{
+        top: -30px;
+        right: 55px;
     }
 
     .pre{

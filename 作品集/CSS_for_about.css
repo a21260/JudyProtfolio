@@ -28,9 +28,9 @@ main{
     margin-right: 30px;
 }
 .my_photo img{
-    width: 170%;
-    margin-top: -90%;
-    margin-left: -10%;
+    width: 100%;
+    /* margin-top: -90%;
+    margin-left: -10%; */
 }
 
 @media(max-width:860px){
@@ -44,6 +44,14 @@ main{
     .my_photo{
         float: none;
         margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
+
+/* 手機 */
+@media(max-width: 600px){
+    .about_me p{
+        display: inline;
     }
 }
 
