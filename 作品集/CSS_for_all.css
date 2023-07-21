@@ -109,7 +109,7 @@ h2{
 p{
     font-size: 1.6rem;
     letter-spacing: 0.1rem;
-    line-height: 3.2rem;
+    line-height: 2.4rem;
     /* 換行左右切齊 */
     word-wrap:break-word;
     text-align: justify;
@@ -129,6 +129,14 @@ p{
 .p_center{
     word-wrap: normal;
     text-align: center;
+}
+
+/* .p_line-height_lower{
+    line-height: 1.6rem;
+} */
+
+.indent{
+    text-indent: 1.6rem;
 }
 
     

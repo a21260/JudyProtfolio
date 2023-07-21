@@ -20,7 +20,7 @@ main{
 
 /* 照片尺寸及裁切 */
 .my_photo{
-    background:green;
+    /* background:green; */
     width: 200px;
     height: 200px;
     overflow: hidden; /* 隱藏多餘圖片 */
@@ -52,6 +52,13 @@ main{
 @media(max-width: 600px){
     .about_me p{
         display: inline;
+    }
+    .experince div p{
+        text-indent: none;
+        display: inline;
+    }
+    .experince div{
+        margin-bottom: 10px;
     }
 }
 
